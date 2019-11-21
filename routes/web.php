@@ -11,6 +11,20 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/', [ 
+    'uses' => 'IndexController@viewIndex',
+    'as' => 'index'
+    ]);
+
+Route::get('/import', [ 
+    'uses' => 'ImportController@viewImport',
+    'as' => 'viewImport'
+    ]);
+/* Route::get('/', function () {
     return view('welcome');
 });
+
+
+
+    
+*/ 
