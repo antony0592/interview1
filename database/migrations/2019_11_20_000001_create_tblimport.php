@@ -19,8 +19,9 @@ class CreateTBLimport extends Migration
             $table->string('tblimportgender',6);
             $table->string('tblimportethnicity',45);
             $table->string('tblimportchildfirst',45);
-            $table->string('tblimportcount',3);
-            $table->string('tblimportrank',3);
+            $table->integer('tblimportcount');
+            $table->integer('tblimportrank');
+            $table->timestamps();
         });
     }
     

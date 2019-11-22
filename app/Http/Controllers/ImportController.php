@@ -10,4 +10,12 @@ class ImportController extends Controller
 
         return view("viewImport");
     }
+
+    public function import()
+    {
+        return view('viewImport');
+    }
+
+
+
 }

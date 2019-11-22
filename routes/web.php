@@ -16,10 +16,19 @@ Route::get('/', [
     'as' => 'index'
     ]);
 
-Route::get('/import', [ 
+Route::get('/viewImport', [ 
     'uses' => 'ImportController@viewImport',
     'as' => 'viewImport'
     ]);
+
+Route::get('/viewData', [ 
+    'uses' => 'AllDataController@getAllData',
+    'as' => 'viewData'
+    ]);
+
+Route::get('import', 'ImportController@import'); 
+Route::post('import', 'ImportController@parseImport'); 
+
 /* Route::get('/', function () {
     return view('welcome');
 });

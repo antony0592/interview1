@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class ClassImport extends Model
+class CsvData extends Model
 {
     protected $table = 'tblimport';
     protected $primaryKey = 'tblimportid';
