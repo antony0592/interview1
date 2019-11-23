@@ -5,40 +5,45 @@
 @section('container')
   <!-- Advanced Tables -->
   <div class="panel panel-default">
-      <div class="panel-heading">
-      </div>
-      <div class="panel-body">
-        <div class="table-responsive">
-          <table class="table table-striped table-bordered table-hover" id="example">
-              <thead>
-                  <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Year of Birth</th>
-                    <th scope="col">Gender</th>
-                    <th scope="col">Ethnicity</th>
-                    <th scope="col">Child's First Name</th>
-                    <th scope="col">Count</th>
-                    <th scope="col">Rank</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  @foreach ($alldata as $row)
-                  <tr>
-                    <th scope="row">{{ $row->tblimportid }}</th>
-                    <td>{{ $row->tblimportbirth }}</td>
-                    <td>{{ $row->tblimportgender }}</td>
-                    <td>{{ $row->tblimportethnicity}}</td>
-                    <td>{{ $row->tblimportchildfirst}}</td>
-                    <td>{{ $row->tblimportcount}}</td>
-                    <td>{{ $row->tblimportrank}}</td>
-                  </tr>
-                  @endforeach
-                </tbody>
-          </table>
-        <!--End Advanced Tables -->
-        </div>
+    <div class="panel-heading">
+        <a href=href="{{url('/viewAdd')}}" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Agregar registro</a><hr>
+    </div>
+    <div class="panel-body">
+      <div class="table-responsive">
+        <table class="table table-striped table-bordered table-hover" id="example">
+            <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Year of Birth</th>
+                  <th scope="col">Gender</th>
+                  <th scope="col">Ethnicity</th>
+                  <th scope="col">Child's First Name</th>
+                  <th scope="col">Count</th>
+                  <th scope="col">Rank</th>
+                  <th scope="col">Modificar</th>
+                  <th scope="col">Eliminar</th>
+                </tr>
+              </thead>
+              <tbody>
+                @foreach ($alldata as $row)
+                <tr>
+                  <th scope="row">{{ $row->tblimportid }}</th>
+                  <td>{{ $row->tblimportbirth }}</td>
+                  <td>{{ $row->tblimportgender }}</td>
+                  <td>{{ $row->tblimportethnicity}}</td>
+                  <td>{{ $row->tblimportchildfirst}}</td>
+                  <td>{{ $row->tblimportcount}}</td>
+                  <td>{{ $row->tblimportrank}}</td>
+                  <td><a class="btn btn-warning btn-sm" href="{{url('/viewUpdate',$row->tblimportid)}}">Editar</a></td>
+                  <td><a  class="btn btn-danger btn-sm" onclick="return confirm('Deseas borrar este registro?')"  href="{{url('/Delete',$row->tblimportid)}}">Borrar</a></td>
+                </tr>
+                @endforeach
+              </tbody>
+        </table>
+      <!--End Advanced Tables -->
       </div>
     </div>
+  </div>
 @endsection
 @section('footer')
 @endsection
