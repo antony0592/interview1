@@ -52,8 +52,7 @@ Route::get('viewUpdate/{tblimportid}', [
 ]);
 
 
-Route::get('import', 'ImportController@import'); 
-Route::post('import', 'ImportController@parseImport'); 
+Route::post('importCSV', 'ImportController@import'); 
 
 /* Route::get('/', function () {
     return view('welcome');

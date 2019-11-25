@@ -15,7 +15,7 @@ class CreateTBLimport extends Migration
     {
         Schema::create('tblimport', function (Blueprint $table) {
             $table->increments('tblimportid');
-            $table->year('tblimportbirth');
+            $table->integer('tblimportbirth');
             $table->string('tblimportgender',6);
             $table->string('tblimportethnicity',45);
             $table->string('tblimportchildfirst',45);
