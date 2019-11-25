@@ -6,7 +6,7 @@
   <!-- Advanced Tables -->
   <div class="panel panel-default">
     <div class="panel-heading">
-        <a href=href="{{url('/viewAdd')}}" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Agregar registro</a><hr>
+        <button class="btn btn-primary"><a href="{{route('viewAdd')}}">Agregar registro</a></button><hr>
     </div>
     <div class="panel-body">
       <div class="table-responsive">

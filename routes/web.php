@@ -21,6 +21,16 @@ Route::get('/viewImport', [
     'as' => 'viewImport'
     ]);
 
+Route::get('/viewAdd', [ 
+    'uses' => 'AddController@viewAdd',
+    'as' => 'viewAdd'
+    ]);
+
+Route::post('Add', [
+        'as' => 'Add',
+        'uses' => 'AddController@store',
+    ]);
+
 Route::get('/viewData', [ 
     'uses' => 'AllDataController@getAllData',
     'as' => 'viewData'

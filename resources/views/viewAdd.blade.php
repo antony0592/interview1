@@ -9,22 +9,18 @@
 			<div class="col-md-5">             
 				<div class="block full tabbable">
 
-                    {{ Form::open(array('route' => ['Update' , $dataimport->tblimportid ], 'data-smk-icon' => 'glyphicon-remove-sign', 'id' => 'formUpdate')) }}
+                    {{ Form::open(array('route' => ['Add'], 'data-smk-icon' => 'glyphicon-remove-sign', 'id' => 'formAdd')) }}
 
                     <div class="header">
-                        <h4 class="modal-title" >Modificar registro</h4>
+                        <h4 class="modal-title" >Agregar nuevo registro</h4>
                     </div>
 
                     <div class="row">
                         <div class="col">
                             <div class="form-group mb-2">
-                                <label for="id" class="">ID</label>
-                                <input readonly type="text" data-smk-type="alphanumeric" class="form-control" id="id" value="{{ $dataimport->tblimportid }}">
-                            </div>
-                            <div class="form-group mb-2">
                                 <label for="birth" class="">Birth</label>
                                 <select data-smk-type="alphanumeric" class="form-control" name="birth" id="birth">
-                                    <option selected  value="{{ $dataimport->tblimportbirth }}">{{ $dataimport->tblimportbirth }}</option>
+                                    <option selected  value="">Elija una opción</option>
                                     <?php
                                         $currentYear = date('Y');
                                         foreach (range(1950, $currentYear) as $value) {
@@ -36,7 +32,7 @@
                             <div class="form-group mb-2">
                                 <label for="gender">Gender</label>
                                 <select class="form-control" name="gender" id="gender">
-                                    <option selected  value="{{ $dataimport->tblimportgender }}">{{ $dataimport->tblimportgender }}</option>
+                                    <option selected  value="">Elija una opción</option>
                                     <option value="MALE">MALE</option>
                                     <option value="FEMALE">FEMALE</option>
                                 </select>
@@ -44,7 +40,7 @@
                             <div class="form-group mb-2">
                                 <label for="tethnicity" class="">Tethnicity</label>
                                 <select class="form-control" name="tethnicity" id="tethnicity">
-                                    <option selected  value="{{ $dataimport->tblimportethnicity }}">{{ $dataimport->tblimportethnicity }}</option>
+                                    <option selected  value="">Elija una opción</option>
                                     <option value="ASIAN AND PACI">ASIAN AND PACI</option>
                                     <option value="ASIAN AND PACIFIC ISLANDER">ASIAN AND PACIFIC ISLANDER</option>
                                     <option value="WHITE NON HISPANIC">WHITE NON HISPANIC</option>
@@ -58,12 +54,12 @@
                         <div class="col">
                             <div class="form-group mb-2">
                                 <label for="childfirst" class="">Child's first</label>
-                                <input type="text" data-smk-type="alphanumeric" class="form-control" name="childfirst" id="childfirst" value="{{ $dataimport->tblimportchildfirst }}">
+                                <input type="text" data-smk-type="alphanumeric" class="form-control" name="childfirst" id="childfirst">
                             </div>
                             <div class="form-group mb-2">
                                 <label for="count" class="">Count</label>
                                 <select class="form-control" name="count" id="count">
-                                    <option selected  value="{{ $dataimport->tblimportcount }}">{{ $dataimport->tblimportcount }}</option>
+                                    <option selected  value="">Elija una opción</option>
                                     <?php
                                         $max = 999;
                                         foreach (range(0, $max) as $value) {
@@ -75,7 +71,7 @@
                             <div class="form-group mb-2">
                                 <label for="rank" class="">Rank </label>
                                 <select class="form-control" name="rank" id="rank">
-                                    <option selected  value="{{ $dataimport->tblimportrank }}">{{ $dataimport->tblimportrank }}</option>
+                                    <option selected  value="">Elija una opción</option>
                                     <?php
                                         $max = 999;
                                         foreach (range(0, $max) as $value) {
@@ -86,7 +82,7 @@
                             </div>
                         </div>
                     </div>
-                    <button id="btnUpdate" onclick="return confirm('Deseas modificar este registro?')" type="submit" class="btn btn-success">Modificar</button>
+                    <button id="btnAdd" onclick="return confirm('Deseas agregar este registro?')" type="submit" class="btn btn-success">Agregar</button>
                     <a href="{{ url()->previous() }}" class="btn btn-danger btn-sm active" role="button" aria-pressed="true">Cancelar</a>
                     {!! Form::close() !!}
 				</div>
@@ -101,8 +97,8 @@
 <!-- Validación Smooke -->
 <script src="{{ asset('js/plugins/smoke-v3.1.1/js/smoke.js') }}"></script>
 <script>
-    $('#btnUpdate').click(function() {
-        if ($('#formUpdate').smkValidate()) {
+    $('#btnAdd').click(function() {
+        if ($('#formAdd').smkValidate()) {
             // Code here
             $.smkAlert({
                 text: 'Validate!',

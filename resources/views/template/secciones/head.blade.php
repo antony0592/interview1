@@ -7,6 +7,8 @@
 <title>Sistema Entrevista</title>
 <!-- Bootstrap core CSS -->
 <link href="{{asset('css/plugins/bootstrap/css/bootstrap.css')}}" rel="stylesheet">
+<!-- Smooke CSS -->
+<link href="{{asset('css/plugins/smoke-v3.1.1/css/smoke.css')}}" rel="stylesheet">
 <style>
     .bd-placeholder-img {
     font-size: 1.125rem;
