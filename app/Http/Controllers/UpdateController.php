@@ -15,6 +15,15 @@ class UpdateController extends Controller
 
      public function store(Request $request, $tblimportid){
 
+      $this->validate($request, [
+            'birth' => 'required|max:45|min:4',
+            'gender' => 'required|max:15|min:1',
+            'tethnicity' => 'required|max:45|min:1',
+            'childfirst' => 'required|max:45|min:1',
+            'count' => 'required|max:3|min:1',
+            'rank' => 'required|max:3|min:1',
+      ]);
+
         $objeto = CsvData::find($tblimportid);
         $objeto->tblimportbirth = $request->birth;
         $objeto->tblimportgender = $request->gender;

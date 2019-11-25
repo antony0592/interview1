@@ -24,7 +24,8 @@
               
           </div>
            
-          <p><button type="submit" class="btn btn-success" name="submit"><i class="fa fa-check"></i> Cargar CSV</button></p>
+          <p><button type="submit" class="btn btn-success" name="submit"><i class="fa fa-check"></i> Cargar CSV</button>
+          <a class="btn btn-danger" href="{{route('viewData')}}">Cancelar</a><hr>
           
         </form>
 

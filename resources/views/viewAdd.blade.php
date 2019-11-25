@@ -28,6 +28,11 @@
                                         }
                                     ?>
                                </select>
+                               @if ($errors->has('birth'))
+                                    <span class="help-block">
+                                    <strong>{{ $errors->first('birth') }}</strong>
+                                    </span>
+                                @endif
                             </div>
                             <div class="form-group mb-2">
                                 <label for="gender">Gender</label>
@@ -36,6 +41,11 @@
                                     <option value="MALE">MALE</option>
                                     <option value="FEMALE">FEMALE</option>
                                 </select>
+                                @if ($errors->has('gender'))
+                                    <span class="help-block">
+                                    <strong>{{ $errors->first('gender') }}</strong>
+                                    </span>
+                                @endif
                             </div>
                             <div class="form-group mb-2">
                                 <label for="tethnicity" class="">Tethnicity</label>
@@ -49,12 +59,22 @@
                                     <option value="WHITE NON HISP">WHITE NON HISPANIC</option>
                                     <option value="BLACK NON HISP">WHITE NON HISPANIC</option>
                                 </select>
+                                @if ($errors->has('tethnicity'))
+                                    <span class="help-block">
+                                    <strong>{{ $errors->first('tethnicity') }}</strong>
+                                    </span>
+                                @endif
                             </div>
                         </div>
                         <div class="col">
-                            <div class="form-group mb-2">
+                            <div class="form-group mb-2 {{ $errors->has('childfirst') ? ' has-error' : '' }}">
                                 <label for="childfirst" class="">Child's first</label>
                                 <input type="text" data-smk-type="alphanumeric" class="form-control" name="childfirst" id="childfirst">
+                                @if ($errors->has('childfirst'))
+                                    <span class="help-block">
+                                    <strong>{{ $errors->first('childfirst') }}</strong>
+                                    </span>
+                                @endif
                             </div>
                             <div class="form-group mb-2">
                                 <label for="count" class="">Count</label>
@@ -67,6 +87,11 @@
                                         }
                                     ?>
                                 </select>
+                                @if ($errors->has('count'))
+                                    <span class="help-block">
+                                    <strong>{{ $errors->first('count') }}</strong>
+                                    </span>
+                                @endif
                             </div>
                             <div class="form-group mb-2">
                                 <label for="rank" class="">Rank </label>
@@ -79,11 +104,16 @@
                                         }
                                     ?>
                                 </select>
+                                @if ($errors->has('rank'))
+                                    <span class="help-block">
+                                    <strong>{{ $errors->first('rank') }}</strong>
+                                    </span>
+                                @endif
                             </div>
                         </div>
                     </div>
                     <button id="btnAdd" onclick="return confirm('Deseas agregar este registro?')" type="submit" class="btn btn-success">Agregar</button>
-                    <a href="{{ url()->previous() }}" class="btn btn-danger btn-sm active" role="button" aria-pressed="true">Cancelar</a>
+                    <a class="btn btn-danger" href="{{route('viewData')}}">Cancelar</a><hr>
                     {!! Form::close() !!}
 				</div>
 			</div>

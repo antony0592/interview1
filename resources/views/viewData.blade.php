@@ -1,12 +1,49 @@
 @extends('template.main')
 @section('csspersonalizado')
   <link href="{{asset('js/plugins/dataTables/datatables.min.css')}}" rel="stylesheet">
+  <style>
+      a:hover {
+        color: hotpink;
+      }
+      .button:hover {
+      background-color: #4CAF50;
+        color:
+          white;
+      }
+      a:hover, a:active {
+          color: #4CAF50;
+      }
+      a:active, a:hover {
+          outline-width: 0;
+      }
+      .button {
+          background-color: white;
+          color: black;
+          border: 2px solid 
+          #4CAF50;
+          padding: 10px 20px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin-left: 20px;
+      }
+      a {
+          color: inherit;
+      }
+      a {
+          background-color: transparent;
+      }
+      *, ::before, ::after {
+          box-sizing: inherit;
+      }
+    </style>
 @endsection
 @section('container')
   <!-- Advanced Tables -->
   <div class="panel panel-default">
     <div class="panel-heading">
-        <button class="btn btn-primary"><a href="{{route('viewAdd')}}">Agregar registro</a></button><hr>
+        <a class="button button1" href="{{route('viewAdd')}}">Agregar registro</a><hr>
     </div>
     <div class="panel-body">
       <div class="table-responsive">

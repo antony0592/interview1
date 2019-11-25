@@ -25,8 +25,9 @@ class ImportController extends Controller
 
         Excel::import(new CsvImport, $path);
         
-        $objeto1 = CsvData::all();
-        return view("viewData",['alldata' => $objeto1]);
+       // $objeto1 = CsvData::all();
+        //return view("viewData",['alldata' => $objeto1]);
+        return view("viewImport");
     }
 
 
